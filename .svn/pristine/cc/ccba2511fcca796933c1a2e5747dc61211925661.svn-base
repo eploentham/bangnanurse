@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nurse_foods_order" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="header1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header3" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_foods_order_id" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["11100225"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     nurse_t_foods_order."foods_order_id" AS nurse_t_foods_order_foods_order_id,
+     nurse_t_foods_order."ward_id" AS nurse_t_foods_order_ward_id,
+     nurse_t_foods_order."date_foods_order" AS nurse_t_foods_order_date_foods_order,
+     nurse_t_foods_order."user_id_foods_order" AS nurse_t_foods_order_user_id_foods_order,
+     nurse_t_foods_order."foods_order_active" AS nurse_t_foods_order_foods_order_active,
+     nurse_t_foods_order."branch_id" AS nurse_t_foods_order_branch_id,
+     nurse_t_foods_order."user_id_foods_receive" AS nurse_t_foods_order_user_id_foods_receive,
+     nurse_t_foods_order."user_id_nutritionist" AS nurse_t_foods_order_user_id_nutritionist,
+     nurse_t_foods_order."user_namet_foods_order" AS nurse_t_foods_order_user_namet_foods_order,
+     nurse_t_foods_order."user_namet_nutritionist" AS nurse_t_foods_order_user_namet_nutritionist,
+     nurse_t_foods_order."user_namet_foods_receive" AS nurse_t_foods_order_user_namet_foods_receive,
+     nurse_t_foods_order_detail."foods_order_detail_id" AS nurse_t_foods_order_detail_foods_order_detail_id,
+     nurse_t_foods_order_detail."room_id" AS nurse_t_foods_order_detail_room_id,
+     nurse_t_foods_order_detail."bed_id" AS nurse_t_foods_order_detail_bed_id,
+     nurse_t_foods_order_detail."patient_hn_no" AS nurse_t_foods_order_detail_patient_hn_no,
+     nurse_t_foods_order_detail."patient_fullnamet" AS nurse_t_foods_order_detail_patient_fullnamet,
+     nurse_t_foods_order_detail."type_foods_id" AS nurse_t_foods_order_detail_type_foods_id,
+     nurse_t_foods_order_detail."type_foods_namet" AS nurse_t_foods_order_detail_type_foods_namet,
+     nurse_t_foods_order_detail."remark" AS nurse_t_foods_order_detail_remark,
+     nurse_t_foods_order_detail."foods_order_detail_active" AS nurse_t_foods_order_detail_foods_order_detail_active,
+     nurse_t_foods_order."ward_namet" AS nurse_t_foods_order_ward_namet,
+     nurse_t_foods_order."foods_period_id" AS nurse_t_foods_order_foods_period_id,
+     b_foods_period."foods_period_namet" AS b_foods_period_foods_period_namet,
+     nurse_t_foods_order_detail."paid_id" AS nurse_t_foods_order_detail_paid_id,
+     nurse_t_foods_order_detail."paid_namet" AS nurse_t_foods_order_detail_paid_namet,
+     nurse_t_foods_order_detail."page_number" AS nurse_t_foods_order_detail_page_number
+,foods_price
+FROM
+     "nurse_t_foods_order" nurse_t_foods_order INNER JOIN "public"."nurse_t_foods_order_detail" nurse_t_foods_order_detail ON nurse_t_foods_order."foods_order_id" = nurse_t_foods_order_detail."foods_order_id"
+     LEFT OUTER JOIN "public"."b_foods_period" b_foods_period ON nurse_t_foods_order."foods_period_id" = b_foods_period."foods_period_id"
+WHERE
+     nurse_t_foods_order.foods_order_id = $P{p_foods_order_id}
+     and foods_order_detail_active = '1'
+Order By nurse_t_foods_order.foods_order_id,nurse_t_foods_order_detail.foods_order_detail_id]]>
+	</queryString>
+	<field name="foods_order_id" class="java.lang.String"/>
+	<field name="ward_id" class="java.lang.String"/>
+	<field name="date_foods_order" class="java.lang.String"/>
+	<field name="user_id_foods_order" class="java.lang.String"/>
+	<field name="foods_order_active" class="java.lang.String"/>
+	<field name="branch_id" class="java.lang.String"/>
+	<field name="user_id_create" class="java.lang.String"/>
+	<field name="user_id_modify" class="java.lang.String"/>
+	<field name="user_id_cancel" class="java.lang.String"/>
+	<field name="user_id_foods_receive" class="java.lang.String"/>
+	<field name="user_id_nutritionist" class="java.lang.String"/>
+	<field name="user_namet_foods_order" class="java.lang.String"/>
+	<field name="user_namet_nutritionist" class="java.lang.String"/>
+	<field name="user_namet_foods_receive" class="java.lang.String"/>
+	<field name="date_create" class="java.lang.String"/>
+	<field name="date_modify" class="java.lang.String"/>
+	<field name="date_cancel" class="java.lang.String"/>
+	<field name="ward_namet" class="java.lang.String"/>
+	<field name="foods_period_id" class="java.lang.String"/>
+	<field name="time_foods_order" class="java.lang.String"/>
+	<field name="foods_order_detail_id" class="java.lang.String"/>
+	<field name="room_id" class="java.lang.String"/>
+	<field name="bed_id" class="java.lang.String"/>
+	<field name="patient_hn_no" class="java.lang.String"/>
+	<field name="patient_fullnamet" class="java.lang.String"/>
+	<field name="type_foods_id" class="java.lang.String"/>
+	<field name="type_foods_namet" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="foods_order_detail_active" class="java.lang.String"/>
+	<field name="paid_id" class="java.lang.String"/>
+	<field name="paid_namet" class="java.lang.String"/>
+	<field name="page_number" class="java.lang.String"/>
+	<field name="foods_price" class="java.lang.Double"/>
+	<field name="foods_period_namet" class="java.lang.String"/>
+	<field name="foods_period_active" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_foods_order_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_ward_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_date_foods_order" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_id_foods_order" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_foods_order_active" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_branch_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_id_foods_receive" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_id_nutritionist" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_namet_foods_order" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_namet_nutritionist" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_user_namet_foods_receive" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_foods_order_detail_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_room_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_bed_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_patient_hn_no" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_patient_fullnamet" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_type_foods_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_type_foods_namet" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_remark" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_foods_order_detail_active" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_ward_namet" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_foods_period_id" class="java.lang.String"/>
+	<field name="b_foods_period_foods_period_namet" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_paid_id" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_paid_namet" class="java.lang.String"/>
+	<field name="nurse_t_foods_order_detail_page_number" class="java.lang.String"/>
+	<variable name="row" class="java.lang.Integer">
+		<variableExpression><![CDATA[new java.lang.Integer(  ($V{row}.intValue()) +1 )]]></variableExpression>
+		<initialValueExpression><![CDATA[$V{row}.valueOf( 0 )]]></initialValueExpression>
+	</variable>
+	<variable name="page_new" class="java.lang.String">
+		<variableExpression><![CDATA[$V{row}.intValue()<15 ? $V{page_new}.valueOf("1"):$V{page_new}.valueOf("2")]]></variableExpression>
+		<initialValueExpression><![CDATA[new String("1")]]></initialValueExpression>
+	</variable>
+	<group name="page_number" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{page_number}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="60" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-7" x="0" y="1" width="179" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[ลงชื่อ .................. ผู้รับอาหาร]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="179" y="1" width="179" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[ลงชื่อ ................. ผู้สั่งอาหาร]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" x="358" y="2" width="176" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[ลงชื่อ ................. โภชนากร]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="179" y="22" width="179" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Center">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{user_namet_foods_order}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="358" y="22" width="176" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Center">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{user_namet_nutritionist}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="0" y="22" width="179" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Center">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{user_namet_foods_receive}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-11" x="0" y="41" width="220" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="BrowalliaUPC" size="10" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[FM-NUR-018 (แก้ไขครั้งที่ 00/15/02/53)]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="103" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="351" y="48" width="184" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่ใบสั่งอาหาร :"+$F{foods_order_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="48" width="217" height="18"/>
+				<textElement>
+					<font fontName="BrowalliaUPC" size="14" isBold="true" isUnderline="true" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["วันที่สั่งอาหาร : "+$F{date_foods_order}.substring(8,10)+"-"+$F{date_foods_order}.substring(5,7)+"-"+$F{date_foods_order}.substring(0,4)]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="66" width="357" height="18"/>
+				<textElement>
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ward :"+$F{ward_namet}+" "+$F{b_foods_period_foods_period_namet}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" x="14" y="84" width="26" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ห้อง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="39" y="84" width="28" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[เตียง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" x="62" y="84" width="55" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[HN NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" x="117" y="84" width="148" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ชื่อ-นามสกุล]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" x="265" y="84" width="115" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ประเภทอาหาร/เครื่องดื่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" x="403" y="84" width="132" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="276" y="66" width="258" height="19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[กรุณาจัดส่งอาหาร / เครื่องดื่มให้ร.พ. ตามรายละเอียดข้างล่างนี้]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="0" y="0" width="534" height="16"/>
+				<textElement textAlignment="Left">
+					<font fontName="BrowalliaUPC" size="10" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="0" y="16" width="534" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="0" y="32" width="534" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="1" y="84" width="534" height="1"/>
+			</line>
+			<line>
+				<reportElement key="line-2" x="1" y="102" width="534" height="1"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-6" x="370" y="83" width="33" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ราคา]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="265" y="0" width="115" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_type_foods_namet}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="117" y="0" width="148" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_patient_fullnamet}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="403" y="0" width="130" height="18" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_remark}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="13" y="0" width="27" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_room_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="39" y="0" width="22" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_bed_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="62" y="0" width="55" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurse_t_foods_order_detail_patient_hn_no}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="163" y="0" width="100" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paid_namet}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="1" y="0" width="18" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{row}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" x="370" y="0" width="33" height="18" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{foods_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

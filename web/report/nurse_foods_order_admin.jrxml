@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nurse_foods_order_admin" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="623"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="header1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header3" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_foods_order_id" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["11100225"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select *
+From r_foods_order
+Order By date_foods_order]]>
+	</queryString>
+	<field name="r_foods_order_id" class="java.lang.String"/>
+	<field name="date_foods_order" class="java.lang.String"/>
+	<field name="bitem_id1" class="java.lang.String"/>
+	<field name="item_name1" class="java.lang.String"/>
+	<field name="item_price1" class="java.lang.Double"/>
+	<field name="item_qty1" class="java.lang.Double"/>
+	<field name="item_total1" class="java.lang.Double"/>
+	<field name="bitem_id2" class="java.lang.String"/>
+	<field name="item_name2" class="java.lang.String"/>
+	<field name="item_price2" class="java.lang.Double"/>
+	<field name="item_qty2" class="java.lang.Double"/>
+	<field name="item_total2" class="java.lang.Double"/>
+	<field name="bitem_id3" class="java.lang.String"/>
+	<field name="item_name3" class="java.lang.String"/>
+	<field name="item_price3" class="java.lang.Double"/>
+	<field name="item_qty3" class="java.lang.Double"/>
+	<field name="item_total3" class="java.lang.Double"/>
+	<field name="bitem_id4" class="java.lang.String"/>
+	<field name="item_name4" class="java.lang.String"/>
+	<field name="item_price4" class="java.lang.Double"/>
+	<field name="item_qty4" class="java.lang.Double"/>
+	<field name="item_total4" class="java.lang.Double"/>
+	<field name="bitem_id5" class="java.lang.String"/>
+	<field name="item_name5" class="java.lang.String"/>
+	<field name="item_price5" class="java.lang.Double"/>
+	<field name="item_qty5" class="java.lang.Double"/>
+	<field name="item_total5" class="java.lang.Double"/>
+	<field name="bitem_id6" class="java.lang.String"/>
+	<field name="item_name6" class="java.lang.String"/>
+	<field name="item_price6" class="java.lang.Double"/>
+	<field name="item_qty6" class="java.lang.Double"/>
+	<field name="item_total6" class="java.lang.Double"/>
+	<field name="bitem_id7" class="java.lang.String"/>
+	<field name="item_name7" class="java.lang.String"/>
+	<field name="item_price7" class="java.lang.Double"/>
+	<field name="item_qty7" class="java.lang.Double"/>
+	<field name="item_total7" class="java.lang.Double"/>
+	<field name="bitem_id8" class="java.lang.String"/>
+	<field name="item_name8" class="java.lang.String"/>
+	<field name="item_price8" class="java.lang.Double"/>
+	<field name="item_qty8" class="java.lang.Double"/>
+	<field name="item_total8" class="java.lang.Double"/>
+	<field name="bitem_id9" class="java.lang.String"/>
+	<field name="item_name9" class="java.lang.String"/>
+	<field name="item_price9" class="java.lang.Double"/>
+	<field name="item_qty9" class="java.lang.Double"/>
+	<field name="item_total9" class="java.lang.Double"/>
+	<field name="bitem_id10" class="java.lang.String"/>
+	<field name="item_name10" class="java.lang.String"/>
+	<field name="item_price10" class="java.lang.Double"/>
+	<field name="item_qty10" class="java.lang.Double"/>
+	<field name="item_total10" class="java.lang.Double"/>
+	<field name="bitem_id11" class="java.lang.String"/>
+	<field name="item_name11" class="java.lang.String"/>
+	<field name="item_price11" class="java.lang.Double"/>
+	<field name="item_qty11" class="java.lang.Double"/>
+	<field name="item_total11" class="java.lang.Double"/>
+	<field name="bitem_id12" class="java.lang.String"/>
+	<field name="item_name12" class="java.lang.String"/>
+	<field name="item_price12" class="java.lang.Double"/>
+	<field name="item_qty12" class="java.lang.Double"/>
+	<field name="item_total12" class="java.lang.Double"/>
+	<field name="bitem_id13" class="java.lang.String"/>
+	<field name="item_name13" class="java.lang.String"/>
+	<field name="item_price13" class="java.lang.Double"/>
+	<field name="item_qty13" class="java.lang.Double"/>
+	<field name="item_total13" class="java.lang.Double"/>
+	<field name="bitem_id14" class="java.lang.String"/>
+	<field name="item_name14" class="java.lang.String"/>
+	<field name="item_price14" class="java.lang.Double"/>
+	<field name="item_qty14" class="java.lang.Double"/>
+	<field name="item_total14" class="java.lang.Double"/>
+	<field name="bitem_id15" class="java.lang.String"/>
+	<field name="item_name15" class="java.lang.String"/>
+	<field name="item_price15" class="java.lang.Double"/>
+	<field name="item_qty15" class="java.lang.Double"/>
+	<field name="item_total15" class="java.lang.Double"/>
+	<field name="branch_id" class="java.lang.String"/>
+	<variable name="row" class="java.lang.Integer">
+		<variableExpression><![CDATA[new java.lang.Integer(  ($V{row}.intValue()) +1 )]]></variableExpression>
+		<initialValueExpression><![CDATA[$V{row}.valueOf( 0 )]]></initialValueExpression>
+	</variable>
+	<variable name="page_new" class="java.lang.String">
+		<variableExpression><![CDATA[$V{row}.intValue()<15 ? $V{page_new}.valueOf("1"):$V{page_new}.valueOf("2")]]></variableExpression>
+		<initialValueExpression><![CDATA[new String("1")]]></initialValueExpression>
+	</variable>
+	<variable name="sumQty1" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty1}]]></variableExpression>
+	</variable>
+	<variable name="sumQty2" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty2}]]></variableExpression>
+	</variable>
+	<variable name="sumQty3" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty3}]]></variableExpression>
+	</variable>
+	<variable name="sumQty4" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty4}]]></variableExpression>
+	</variable>
+	<variable name="sumQty5" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty5}]]></variableExpression>
+	</variable>
+	<variable name="sumQty6" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty6}]]></variableExpression>
+	</variable>
+	<variable name="sumQty7" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty7}]]></variableExpression>
+	</variable>
+	<variable name="sumQty8" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty8}]]></variableExpression>
+	</variable>
+	<variable name="sumQty9" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty9}]]></variableExpression>
+	</variable>
+	<variable name="sumQty10" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty10}]]></variableExpression>
+	</variable>
+	<variable name="sumQty11" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty11}]]></variableExpression>
+	</variable>
+	<variable name="sumQty12" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty12}]]></variableExpression>
+	</variable>
+	<variable name="sumQty13" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty13}]]></variableExpression>
+	</variable>
+	<variable name="sumQty14" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_qty14}]]></variableExpression>
+	</variable>
+	<variable name="sumQtytotal" class="java.lang.Double" resetType="Group" resetGroup="date_foods_order" incrementType="Group" incrementGroup="date_foods_order" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total1}+$F{item_total2}+$F{item_total3}+$F{item_total4}+$F{item_total5}+$F{item_total6}+$F{item_total7}+$F{item_total8}+$F{item_total9}+$F{item_total10}+$F{item_total11}+$F{item_total12}+$F{item_total13}+$F{item_total14}]]></variableExpression>
+	</variable>
+	<variable name="totalItem" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQtytotal}]]></variableExpression>
+	</variable>
+	<variable name="totalItem1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total1}]]></variableExpression>
+	</variable>
+	<variable name="totalItem2" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total2}]]></variableExpression>
+	</variable>
+	<variable name="totalItem3" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total3}]]></variableExpression>
+	</variable>
+	<variable name="totalItem4" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total4}]]></variableExpression>
+	</variable>
+	<variable name="totalItem5" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total5}]]></variableExpression>
+	</variable>
+	<variable name="totalItem6" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total6}]]></variableExpression>
+	</variable>
+	<variable name="totalItem7" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total7}]]></variableExpression>
+	</variable>
+	<variable name="totalItem8" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total8}]]></variableExpression>
+	</variable>
+	<variable name="totalItem9" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total9}]]></variableExpression>
+	</variable>
+	<variable name="totalItem10" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total10}]]></variableExpression>
+	</variable>
+	<variable name="totalItem11" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total11}]]></variableExpression>
+	</variable>
+	<variable name="totalItem12" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total12}]]></variableExpression>
+	</variable>
+	<variable name="totalItem13" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total13}]]></variableExpression>
+	</variable>
+	<variable name="totalItem14" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{item_total14}]]></variableExpression>
+	</variable>
+	<variable name="totalQty1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty2" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty3" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty4" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty5" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty6" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty7" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty8" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty9" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty10" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty11" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty12" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty13" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<variable name="totalQty14" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{sumQty1}]]></variableExpression>
+	</variable>
+	<group name="date_foods_order">
+		<groupExpression><![CDATA[$F{date_foods_order}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="18">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" mode="Transparent" x="1" y="0" width="45" height="18" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Center">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{date_foods_order}.substring(8,10)+"-"+$F{date_foods_order}.substring(5,7)+"-"+$F{date_foods_order}.substring(2,4)]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" mode="Opaque" x="47" y="0" width="20" height="18" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="97" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="147" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty3}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="197" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty4}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="247" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty5}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" mode="Opaque" x="297" y="0" width="20" height="18" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty6}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" mode="Opaque" x="347" y="0" width="20" height="18" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty7}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="397" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty8}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="447" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty9}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="497" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty10}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="67" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="117" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="167" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total3}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="217" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total4}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="267" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total5}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="317" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total6}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="367" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total7}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="417" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total8}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="467" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total9}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="517" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total10}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="547" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty11}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="567" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total11}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="617" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total12}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="667" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total13}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="647" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty13}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="597" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty12}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="717" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_total14}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0" isBlankWhenNull="false">
+					<reportElement key="textField" x="697" y="0" width="20" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQty14}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,###" isBlankWhenNull="false">
+					<reportElement key="textField" x="752" y="0" width="30" height="18"/>
+					<textElement textAlignment="Right">
+						<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumQtytotal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="1" y="48" width="45" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[วันที่]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="0" y="0" width="782" height="16"/>
+				<textElement textAlignment="Left">
+					<font fontName="BrowalliaUPC" size="10" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="0" y="16" width="782" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="0" y="32" width="782" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="12" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{header3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="47" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="97" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="147" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="197" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="247" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name5}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="297" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name6}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="347" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="397" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name8}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="447" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name9}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="497" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name10}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="547" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name11}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="false">
+				<reportElement key="textField-19" x="57" y="16" width="187" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="9" isBold="false" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-15" x="0" y="16" width="57" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="9" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[print date]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-20" x="584" y="16" width="182" height="19" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="9" pdfFontName="tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["หน้า " + $V{PAGE_NUMBER} + " ถึง "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-23" mode="Transparent" x="753" y="16" width="29" height="19" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None">
+					<font fontName="Tahoma" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahoma.ttf" pdfEncoding="CP1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="597" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name12}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="647" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name13}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="697" y="48" width="50" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name14}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-15" x="752" y="48" width="30" height="19" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="9" pdfFontName="tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[รวม]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="752" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="67" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="117" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="217" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem4}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="167" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem3}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="317" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem6}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="267" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumQty5}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="367" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem7}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="417" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem8}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="467" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem9}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="517" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem10}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="567" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem11}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="617" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem12}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="667" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem13}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###" isBlankWhenNull="false">
+				<reportElement key="textField" x="717" y="2" width="30" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalItem14}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="47" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="97" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="147" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty3}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="197" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty4}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="247" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty5}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="297" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty6}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="347" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty7}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="397" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty8}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="447" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty9}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="497" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty10}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="547" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty11}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="597" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty12}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="647" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty13}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement key="textField" mode="Opaque" x="697" y="2" width="20" height="18" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right">
+					<font fontName="BrowalliaUPC" size="14" pdfFontName="BROWAU.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty14}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

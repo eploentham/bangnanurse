@@ -1,0 +1,66 @@
+<%-- 
+    Document   : medical_cert_company_f_view
+    Created on : Dec 29, 2009, 5:46:51 PM
+    Author     : root
+--%>
+
+<%@page import="bangnanurse.control.MedicalCertControl"%>
+<%@page import="bangnanurse.objdb.OpdTMedicalCertCompanyDB"%>
+<%@page import="bangnanurse.object.OpdTMedicalCertCompany"%>
+<%@page import ="java.sql.*" %>
+<%@page import ="java.text.*" %>
+<%@page import ="java.util.* " %>
+<%@page import ="bangnaLibrary.*" %>
+<%@page contentType="text/html" pageEncoding="TIS-620"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<%
+String text="",branch_id="",flagpage="",medical_cert_company_di="",date_current="", text_header="", row_color="", font_color="";
+String date_currentdb = "", link="";
+Config1 config1 = new Config1();
+//OpdTMedicalCertCompanyDetail medical_cert_company_detail = new OpdTMedicalCertCompanyDetail();
+OpdTMedicalCertCompany medical_cert_company = new OpdTMedicalCertCompany();
+//OpdBMedicalCertCompanyResult medical_cert_company_result = new OpdBMedicalCertCompanyResult();
+//OpdBMedicalCertCompanyOrder medical_cert_company_order = new OpdBMedicalCertCompanyOrder();
+MedicalCertControl theMCC = new MedicalCertControl(config1);
+Vector v_medical_cert_company = new Vector();
+try {
+    if(request.getParameter("medical_cert_company_id")!=null) {
+        medical_cert_company_di = new String (request.getParameter("medical_cert_company_id").getBytes("ISO8859_1"),"TIS-620");
+    }
+    if(request.getParameter("date_current")!=null) {
+        date_current = new String (request.getParameter("date_current").getBytes("ISO8859_1"),"TIS-620");
+    }
+    if(request.getParameter("branch_id")!=null) {
+        branch_id = new String (request.getParameter("branch_id").getBytes("ISO8859_1"),"TIS-620");
+    }
+    if(request.getParameter("patient_import_id")!=null) {
+        //branch_id = new String (request.getParameter("patient_import_id").getBytes("ISO8859_1"),"TIS-620");
+    }
+    if(request.getParameter("flagpage")!=null) {
+        flagpage = new String (request.getParameter("flagpage").getBytes("ISO8859_1"),"TIS-620");
+    }
+   date_current = config1.DateFormatShow2DB(date_current, "ddMMyyyy");//bangna5
+    //date_current = config1.DateFormatShowHospital2DB(date_current, "ddMMyyyy");//bangna5
+    //date_current = config1.DateFormatShow2DBHospital(date_current, "ddMMyyyy");//bangna1
+    v_medical_cert_company = theMCC.getOpdTMedicalCertCompany(branch_id, "", date_current, "date");
+    for(int i=0;i<=v_medical_cert_company.size()-1;i++){
+        medical_cert_company = (OpdTMedicalCertCompany)v_medical_cert_company.get(i);
+        link = "<a href='medical_cert_company_add.jsp?medical_cert_company_id="+medical_cert_company.getMedicalCertCompanyId()+"'>"+medical_cert_company.getPatientFullnamet()+"</a>";
+        text+="<tr><td>"+(i+1)+"</td><td>"+medical_cert_company.getMedicalCertCompanyTime()+"</td><td>"+medical_cert_company.getVisitHn()+"</td>" +
+                "<td>"+link+"</td>" +
+                "<td>"+medical_cert_company.getDoctorNamet()+"</td><td>"+medical_cert_company.getComment1()+"</td>" +
+                "</tr>";
+    }
+    theMCC.blc.saveLog("bangnanurse.medical_cert_company_f_view", "", "", "", config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", "v_medical_cert_company size = "+v_medical_cert_company.size());
+} catch (Exception ex) {
+    text = ex.getMessage();
+    theMCC.blc.saveLog("bangnanurse.medical_cert_company_f_view", "", "", "", config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "search medical_cert_company_f_view.jsp", ex.getMessage());
+}
+text_header="<table><thead><tr><th align='center'>ลำดับ</th><th width='50' align='center'>เวลา</th><th width='70' align='center'>HN</th>" +
+        "<th width='250' align='left'>ชื่อ-นามสกุล</th><th width='250' align='left'>ขื่อแพทย์</th>" +
+        "<th width='250' align='left'>หมายเหตุ</th>" +
+        "</tr></thead><tbody>";
+text=text_header+text+"</tbody></table>";
+out.print(text);
+%>
