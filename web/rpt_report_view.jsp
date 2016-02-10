@@ -98,9 +98,10 @@
                 if(mcc.statusHasLab.equals("1") || mcc.statusHasXray.equals("1")) par.put("p_valid", "มีอายุการใช้งาน 3 เดือน (VALID FOR THREE MONTHS)");//m3+
                 else par.put("p_valid", "มีอายุการใช้งาน 1 เดือน (VALID FOR ONE MONTHS)");//m3+
             }
-            //theMCC.blc.saveLog("bangnanurse.medical_cert_company_add", "", "", reportname, config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", 
-            //        "header3="+header3+",p_medical_cert_company_id="+medical_cert_company_id);
-        }else if(reportname.equals("nurse_foods_order_admin")){            
+            theMCC.blc.saveLog("bangnanurse.medical_cert_company_add", "", "", reportname, config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", 
+                    "header3="+header3+",p_medical_cert_company_id="+medical_cert_company_id);
+        }else if(reportname.equals("nurse_foods_order_admin")){
+            
             String  dateStart = config1.StringNull(request.getParameter("date_start"));
             String  dateEnd = config1.StringNull(request.getParameter("date_end"));
             theNC.setRFoodsOrder(branch_id, config1.DateFormatShow2DB(dateStart,"ddMMyyyy"), config1.DateFormatShow2DB(dateEnd,"ddMMyyyy"));
@@ -108,30 +109,15 @@
             par.put("header2", address_name);
             par.put("header3", header3);
             par.put("dateStart", dateStart);
-            par.put("dateEnd", dateEnd);            
-        }else if(reportname.equals("nurse_foods_order_admin_detail")){            
-            String date_start = config1.StringNull(request.getParameter("date_start"));
-            String date_end = config1.StringNull(request.getParameter("date_end"));
-            String ward_id = config1.StringNull(request.getParameter("ward_id"));
-            theNC.setRFoodsOrder(branch_id, config1.DateFormatShow2DB(date_start,"ddMMyyyy"), config1.DateFormatShow2DB(date_end,"ddMMyyyy"));
-            if(!date_start.equals("") || !date_end.equals("") || !ward_id.equals("")){
-                date_start = " fo.date_foods_order = '"+date_start+"' ";
-                date_end = " fo.date_foods_order = '"+date_end+"' ";
-                ward_id = " fo.ward_id = '"+ward_id+"' ";
-            }
-            par.put("header1", branch_name);
-            par.put("header2", address_name);
-            par.put("header3", header3);
-            par.put("date_start", date_start);
-            par.put("date_end", date_end);
-            par.put("ward_id", ward_id);                       
+            par.put("dateEnd", dateEnd);
+            
         }else if(reportname.equals("nurse_foods_order")){
             String  foods_order_id = config1.StringNull(request.getParameter("foods_order_id"));
             branch_name = config1.getSiteNamet1(branch_id);
             par.put("header1", branch_name);
             par.put("p_foods_order_id", foods_order_id);
             par.put("header2","ใบสั่งอาหาร " );
-            //par.put("header3","1" );
+            par.put("header3","1" );
             theMCC.blc.saveLog("bangnanurse.nurse_foods_order", "", "", "", config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", "");
             conn=config1.getConnectionBangna();
         }else if(reportname.equals("print_sticker_admit")){

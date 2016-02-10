@@ -40,8 +40,7 @@ try {
     if(request.getParameter("flagpage")!=null) {
         flagpage = new String (request.getParameter("flagpage").getBytes("ISO8859_1"),"TIS-620");
     }
-   date_current = config1.DateFormatShow2DB(date_current, "ddMMyyyy");//bangna5
-    //date_current = config1.DateFormatShowHospital2DB(date_current, "ddMMyyyy");//bangna5
+    date_current = config1.DateFormatShow2DB(date_current, "ddMMyyyy");//bangna5
     //date_current = config1.DateFormatShow2DBHospital(date_current, "ddMMyyyy");//bangna1
     v_medical_cert_company = theMCC.getOpdTMedicalCertCompany(branch_id, "", date_current, "date");
     for(int i=0;i<=v_medical_cert_company.size()-1;i++){

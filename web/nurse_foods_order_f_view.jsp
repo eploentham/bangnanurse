@@ -21,7 +21,7 @@ BBranch branch = new BBranch();
 NurseControl NC = new NurseControl(config1);
 NurseTFoodsOrderDetail foodsorderdetail;
 PatientVisit pv = new PatientVisit();
-String flag="",foodsOrderId="",branchId="",bedId="",cboPatientHnno="",wardId="",employeeIdOrder="",roomId="",foodsOrderDetailId="",ward_id="";
+String flag="",foodsOrderId="",branchId="",bedId="",cboPatientHnno="",wardId="",employeeIdOrder="",roomId="",foodsOrderDetailId="";
 String text="", hnNo="";
 if(request.getParameter("flagpage")!=null) {
     flag = new String (request.getParameter("flagpage").getBytes("ISO8859_1"),"TIS-620");
@@ -87,10 +87,9 @@ try{
         if(request.getParameter("hnNo")!=null) {//foodsOrderId
             hnNo = new String (request.getParameter("hnNo").getBytes("ISO8859_1"),"TIS-620");
         }
-        if(request.getParameter("ward_id")!=null) {//foodsOrderId
-            ward_id = new String (request.getParameter("ward_id").getBytes("ISO8859_1"),"TIS-620");
-        }
-        Vector v = config1.SearchPaitentinWard(branchId, "", hnNo, "hnno_bed", ward_id, "", "");
+        //Vector v = config1.SearchPaitentinWard(branchId, "", hnNo, "hnno_bed", "", "", "");
+        Vector v = config1.SearchPaitentinRoom(branchId, "", hnNo, "hnno_bed", "", "", "");
+        //text = "1111@999";
         if(v.size()>0){
             pv = (PatientVisit)v.get(0);
             text = pv.room+"@";

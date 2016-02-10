@@ -4,16 +4,15 @@
     Author     : root
 --%>
 
-<%@page import="bangnaLibrary.BBranch"%>
 <%@page import="bangnaLibrary.ComboDB"%>
 <%@page import="bangnaLibrary.Config1"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-String text="",flagpage="",branchId="",date_start="",date_end="",date_start_admin_day="",date_end_admin_day="",date_current="",cbo_branch="",cbo_ward="",ward_id="";
+String text="",flagpage="",branchId="",date_start="",date_end="",date_current="",cbo_branch="";
+
 Config1 config1 = new Config1();
 ComboDB combodb = new ComboDB(config1);
-BBranch branch = new BBranch();
 try {
     if(request.getParameter("flagpage")!=null) {
         flagpage = new String (request.getParameter("flagpage").getBytes("ISO8859_1"),"TIS-620");
@@ -21,20 +20,10 @@ try {
     if(request.getParameter("cbo_branch")!=null) {
         branchId = new String (request.getParameter("cbo_branch").getBytes("ISO8859_1"),"TIS-620");
     }
-    if(request.getParameter("cbo_ward")!=null) {
-        ward_id = request.getParameter("cbo_ward");
-    }
-    if(branchId.equals("")){
-        branch=config1.getBranchActive();
-        branchId = branch.branchId;
-    }
     cbo_branch = combodb.getComboBranch(branchId);
     date_current = config1.getDate("yyyyMMdd");
     date_start = config1.DateFormatDB2Show(date_current,"ddMMyyyy");
     date_end = config1.DateFormatDB2Show(date_current,"ddMMyyyy");
-    date_start_admin_day = config1.DateFormatDB2Show(date_current,"ddMMyyyy");
-    date_end_admin_day = config1.DateFormatDB2Show(date_current,"ddMMyyyy");
-    cbo_ward = combodb.CboWardN(branchId,ward_id);
 }catch(Exception ex){
     text = ex.getMessage();
 }
@@ -54,18 +43,13 @@ try {
                 hideLoader();
                 $("#txt_date_start").datepicker({ dateFormat: 'dd-mm-yy' });
                 $("#txt_date_end").datepicker({ dateFormat: 'dd-mm-yy' });
-                $("#txt_date_start_admin_day").datepicker({ dateFormat: 'dd-mm-yy' });
-                $("#txt_date_end_admin_day").datepicker({ dateFormat: 'dd-mm-yy' });
                 $("#dialogShowStickerAdmit").hide();
                 $("#dialogShowFOAdmin").hide();
-                $("#dialogShowFOAdminDetail").hide();
                 $("#txtVisitHn").keyup(autoSearch);
                 $("#chkFoReportAdminDay").click(showDialogFOAdmin);
-                $("#chkFoReportAdminDetail").click(showDialogFOAdminDetail);
                 $("#chkStickerAdmit").click(showDialogStickerAdmit);
                 $("#anchorSearchAdmit").click(searchPatientAdmit);
                 $("#anchorFoReportAdminDay").click(changesubmitFoReportAdminDay);
-                $("#anchorFoReportAdminDetail").click(changesubmitFoReportAdminDetail);
                 $("#anchorStickerAdmit").click(changesubmitFoReportStickerAdmit);
                 $("#tab3").css("background-image","url('../images/tabright_click.gif')");
                 $("#tab33").html("<font color='red'><b>"+$("#tab33").html()+"</b></font>");
@@ -86,18 +70,11 @@ try {
     }
     function showDialogStickerAdmit(){
         $("#dialogShowStickerAdmit").show();
-        $("#dialogShowFOAdminDetail").hide();
-        $("#dialogShowFOAdmin").hide();
-    }
-    function showDialogFOAdminDetail(){
-        $("#dialogShowFOAdminDetail").show();
-        $("#dialogShowStickerAdmit").hide();
         $("#dialogShowFOAdmin").hide();
     }
     function showDialogFOAdmin(){
         $("#dialogShowFOAdmin").show();
         $("#dialogShowStickerAdmit").hide();
-        $("#dialogShowFOAdminDetail").hide();
     }
     function autoSearch(){
         $("#divTemp").load("nurse_foods_order_f_view.jsp",
@@ -117,8 +94,8 @@ try {
             {doctorSearch : $("#txtVisitHn").val(), branch_id : $("#cbo_branch").val(), flagpage : "search_admit"},function() {hideLoader();});
     }
 function changesubmitFoReportAdminDay(){
-    document.forms[0].action = "rpt_report_view.jsp?txt_report_name=nurse_foods_order_admin&txt_form=daily&date_start_admin_day="
-        +$("#txt_date_start_admin_day").val()+"&date_end_admin_day="+$("#txt_date_end_admin_day").val();
+    document.forms[0].action = "rpt_report_view.jsp?txt_report_name=nurse_foods_order_admin&txt_form=daily&date_start="
+        +$("#txt_date_start").val()+"&date_end="+$("#txt_date_end").val();
     document.forms[0].submit();
     return false;
 }
@@ -153,41 +130,24 @@ function changesubmitFoReportStickerAdmit(){
     document.forms[0].submit();
     return false;
 }
-function changesubmitFoReportAdminDetail(){
-    document.forms[0].action = "rpt_report_view.jsp?txt_report_name=nurse_foods_order_admin_detail&txt_form=daily&date_start="
-        +$("#txt_date_start").val()+"&date_end="+$("#txt_date_end").val()+"&ward_id="+$("#cbo_ward").val();
-    document.forms[0].submit();
-    return false;
-}
     </script>
     </head>
     <body>
         <form name="nurse_fo_report" id="nurse_fo_report" action="nurse_fo_report.jsp" method="POST">
             <%@include  file="nurse_foods_order_header.jsp" %>
-            <table><tr align="center"><td align="center"><table width="400" align="left">
-      <thead><th colspan="2" scope="col"><div align="center">เลือกรายการ</div></th></thead>
-            <tr><td align="left"><label><input type="radio" id="chkFoReportAdminDetail" name="chkReport">&nbsp;1. รายงานแสดงรายการสั่งอาหาร แต่ละวัน</label>
-            <div id="dialogShowFOAdminDetail">
+            <table><tr align="center"><td align="center"><table width="100%" align="center"><tr><td align="left">
+            <label><input type="radio" id="chkFoReportAdminDay" name="chkReport">รายงานสรุปค่าอาหารจากพยาบาลตามประเภทอาหาร แต่ละวัน</label>
+                    <div id="dialogShowFOAdmin">
             <table>
-                    <tr><td colspan="4"><label>Ward :&nbsp;<select name="cbo_ward" id="cbo_ward"><%out.print(cbo_ward); %></select></label></td></tr>
-                    <tr><td>วันที่ :</td><td><input type="text" name="txt_date_start" id="txt_date_start" value="<% out.print(date_start);%>" readonly="readonly" class="dateinput" size="8"></td>
-                    <td>ถึงวันที่ :&nbsp;<input type="text" name="txt_date_end" id="txt_date_end" value="<% out.print(date_end);%>" readonly="readonly" class="dateinput" size="8"></td>
-                    <td><label><A HREF="#" id="anchorFoReportAdminDetail" NAME="anchorFoReportAdminDetail" ><img src="images/printer-a.png" alt="" width="16" align="middle" height="16" border="0"></A></label>
-                    </td></tr>                    
-            </table></div>
-            </td></tr>
-            <tr><td align="left"><label><input type="radio" id="chkFoReportAdminDay" name="chkReport">&nbsp;2. รายงานสรุปค่าอาหารจากพยาบาลตามประเภทอาหาร แต่ละวัน</label>
-            <div id="dialogShowFOAdmin">
-            <table>
-                    <tr><td colspan="4"><label>สาขา :&nbsp;<select name="cbo_branch" id="cbo_branch"><%out.print(cbo_branch); %></select></label></td></tr>
-                    <tr><td>วันที่ :</td><td><input type="text" name="txt_date_start_admin_day" id="txt_date_start_admin_day" value="<% out.print(date_start_admin_day);%>" readonly="readonly" class="dateinput" size="8"></td>
-                    <td>ถึงวันที่ :&nbsp;<input type="text" name="txt_date_end_admin_day" id="txt_date_end_admin_day" value="<% out.print(date_end_admin_day);%>" readonly="readonly" class="dateinput" size="8"></td>
-                    <td><label><A HREF="#" id="anchorFoReportAdminDay" NAME="anchorFoReportAdminDay" >พิมพ์&nbsp;<img src="images/printer-a.png" alt="" width="16" align="middle" height="16" border="0"></A></label>
-                    </td></tr>
-            </table></div>
-            </td></tr>
+    <tr><td colspan="4"><label>&nbsp;&nbsp;สาขา :&nbsp;<select name="cbo_branch" id="cbo_branch"><%out.print(cbo_branch); %></select></label></td></tr>
+    <tr><td>วันที่ :</td><td><input type="text" name="txt_date_start" id="txt_date_start" value="<% out.print(date_start);%>" readonly="readonly" class="dateinput" size="8"></td>
+        <td>ถึงวันที่ :&nbsp;<input type="text" name="txt_date_end" id="txt_date_end" value="<% out.print(date_end);%>" readonly="readonly" class="dateinput" size="8"></td>
+        <td><label><A HREF="#" id="anchorFoReportAdminDay" NAME="anchorFoReportAdminDay" >พิมพ์&nbsp;<img src="images/printer-a.png" alt="" width="16" align="middle" height="16" border="0"></A></label>
+        </td></tr></table>
+        </div>
+                                </td></tr>
                 <tr><td align="left">
-                    <label><input type="radio" id="chkStickerAdmit" name="chkReport">&nbsp;3. พิมพ์ Sticker คนไข้admit</label>
+                    <label><input type="radio" id="chkStickerAdmit" name="chkReport"> พิมพ์ Sticker คนไข้admit</label>
             <div id="dialogShowStickerAdmit">
                 <table >
     <tr><td>HN</td><td><input type="text" name="txtVisitHn" id="txtVisitHn" value="" size="30"><img src="images/search1.jpeg" alt="" border="0"></td></tr>

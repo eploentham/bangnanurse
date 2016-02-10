@@ -22,6 +22,7 @@ import java.util.Vector;
  * @author root
  */
 public class OpdTMedicalCertCompanyDB {
+    
     private OpdTMedicalCertCompanyDetail mccD = new OpdTMedicalCertCompanyDetail();
     private OpdTMedicalCertCompany mcc = new OpdTMedicalCertCompany();
     private OpdBMedicalCertCompanyResult medical_cert_company_result = new OpdBMedicalCertCompanyResult();
@@ -39,7 +40,6 @@ public class OpdTMedicalCertCompanyDB {
     public String getMaxRowOpdTMedicalCertCompany(Connection conn){
         String sql="", max="";
         try {
-            
             Statement st;
             ResultSet rs;
             st = conn.createStatement();
@@ -658,28 +658,24 @@ public class OpdTMedicalCertCompanyDB {
                         ordere1=mcco.getOrdere();
                     }
                 }else{
-                    if(order1.equals("ºÑ¹·Ö¡ÊÑ­­Ò³ªÕ¾")){
+                    if(order1.equals("à¸?à¸±à¸?à¸?à¸¶à¸?à¸ªà¸±à¸?à¸?à¸²à¸?à¸?à¸µà¸?")){
                         //visit_id = medical_cert_company.getTVisitId();
                         result = t_visit_vital_signdb.getPatientVisitVitalSign(branch_id, visit_id);
                         if(result.length()>0) {
                             chkon = "checked";
                         }
                         //btn_cert="<input type='button' name='btn_cert_vital_sign' id='btn_cert_vital_sign' value='...' onclick='searchVitalSign("+row+");'>";
-                    }else if(order1.equals("ÊèÇ¹ÊÙ§/¹éÓË¹Ñ¡")) {
+                    }else if(order1.equals("à¸ªà¹?à¸§à¸?à¸ªà¸¹à¸?/à¸?à¹?à¸³à¸«à¸?à¸±à¸?")) {
                         result = t_visit_vital_signdb.getPatientVisitWidthHeight(branch_id, visit_id);
                         if(result.length()>0) {
                             chkon = "checked";
                         }
                         btn_cert="";
-                    }else if(order1.equals("BMI")) {
-                        result = t_visit_vital_signdb.getPatientVisitBMI(branch_id, visit_id);
                     }else if(!mcco.labNumber.equals("")){
                         result = rLabDB.getResultLab(branch_id, visit_id, mcco.labNumber);
                         if(result.length()>0) {
                             chkon = "checked";
                         }
-                    
-                        
                     }
                 }
             }else {

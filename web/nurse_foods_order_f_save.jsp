@@ -210,8 +210,8 @@ try{
         }
     }
     foodsorderdetail.setPaidId(paid_id);
-    //patient = config1.getPatientFullNamet(branch_id, patient_hn_no, branch.getBranchProgram());//m1+
-    //foodsorderdetail.setPatientFullnamet(patient_fullnamet+"  อายุ "+patient.getPatientAge());//m1+
+    patient = config1.getPatientFullNamet(branch_id, patient_hn_no, branch.getBranchProgram());//m1+
+    foodsorderdetail.setPatientFullnamet(patient_fullnamet+"  อายุ "+patient.getPatientAge());//m1+
     if(paid_id.equals("01")) paid_namet = "อื่น"+paid_id;
     else if(paid_id.equals("02")) paid_namet = "ทป";
     else if(paid_id.equals("03")) paid_namet = "อื่น"+paid_id;
@@ -231,7 +231,6 @@ try{
     else if(paid_id.equals("47")) paid_namet = "ปกส.อ1";
     else if(paid_id.equals("48")) paid_namet = "ปกส.อ2";
     else if(paid_id.equals("50")) paid_namet = "พนง";
-    else if(paid_id.equals("98")) paid_namet = "UC";
     else if(paid_id.equals("66")){
         paid_namet = "UC";
     }else if(paid_id.equals("88")){

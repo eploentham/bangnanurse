@@ -39,7 +39,6 @@ public class OpdTMedicalCertCompanyDB {
     public String getMaxRowOpdTMedicalCertCompany(Connection conn){
         String sql="", max="";
         try {
-            
             Statement st;
             ResultSet rs;
             st = conn.createStatement();
@@ -671,18 +670,11 @@ public class OpdTMedicalCertCompanyDB {
                             chkon = "checked";
                         }
                         btn_cert="";
-                    }else if(order1.equals("BMI")) {
-                        result = t_visit_vital_signdb.getPatientVisitBMI(branch_id, visit_id);
-                        if(result.length()>0) {
- //                           chkon = "checked";
-                        }
                     }else if(!mcco.labNumber.equals("")){
                         result = rLabDB.getResultLab(branch_id, visit_id, mcco.labNumber);
                         if(result.length()>0) {
                             chkon = "checked";
                         }
-                    
-                        
                     }
                 }
             }else {
