@@ -98,8 +98,8 @@
                 if(mcc.statusHasLab.equals("1") || mcc.statusHasXray.equals("1")) par.put("p_valid", "มีอายุการใช้งาน 3 เดือน (VALID FOR THREE MONTHS)");//m3+
                 else par.put("p_valid", "มีอายุการใช้งาน 1 เดือน (VALID FOR ONE MONTHS)");//m3+
             }
-            theMCC.blc.saveLog("bangnanurse.medical_cert_company_add", "", "", reportname, config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", 
-                    "header3="+header3+",p_medical_cert_company_id="+medical_cert_company_id);
+            //theMCC.blc.saveLog("bangnanurse.medical_cert_company_add", "", "", reportname, config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", 
+            //        "header3="+header3+",p_medical_cert_company_id="+medical_cert_company_id);
         }else if(reportname.equals("nurse_foods_order_admin")){
             
             String  dateStart = config1.StringNull(request.getParameter("date_start"));
@@ -118,7 +118,7 @@
             par.put("p_foods_order_id", foods_order_id);
             par.put("header2","ใบสั่งอาหาร " );
             par.put("header3","1" );
-            theMCC.blc.saveLog("bangnanurse.nurse_foods_order", "", "", "", config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", "");
+            //theMCC.blc.saveLog("bangnanurse.nurse_foods_order", "", "", "", config1.getDateDBHospital("yyyyMMdd hh:mm:ss"), request.getRemoteAddr(), "", "");
             conn=config1.getConnectionBangna();
         }else if(reportname.equals("print_sticker_admit")){
             String  visitHn = config1.StringNull(request.getParameter("visitHn"));
